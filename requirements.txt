@@ -9,6 +9,11 @@ annotated-doc==0.0.5
 annotated-types==0.8.0
     # via pydantic
 anyio==4.15.1
+boto3==1.40.12
+    # via fastapi-app
+botocore==1.40.12
+    # via boto3
+    #   s3transfer
     # via
     #   httpx
     #   starlette

@@ -16,6 +16,16 @@ Para desarrollo local, copia `.env.example` a `.env` y reemplaza sus valores. El
 
 ## Ejecutar
 
+Configura el archivo `.env` con la URL de PostgreSQL y las credenciales de AWS:
+
+```text
+DATABASE_URL=postgresql+psycopg2://USER:PASSWORD@POSTGRES_PRIVATE_IP:5432/DATABASE_NAME
+AWS_ACCESS_KEY_ID=your_access_key
+AWS_SECRET_ACCESS_KEY=your_secret_key
+AWS_DEFAULT_REGION=us-east-1
+AWS_S3_BUCKET=your-bucket-name
+```
+
 Con Python y uv:
 
 ```powershell
@@ -30,3 +40,8 @@ docker compose up --build -d
 ```
 
 La API queda disponible en el puerto `8000`. Swagger UI: `/docs`.
+
+### Endpoints adicionales
+
+- `GET /health`: indica que la API está funcionando.
+- `POST /images`: recibe una imagen, valida el tipo, la sube a Amazon S3 con Boto3 y devuelve la respuesta de éxito.
