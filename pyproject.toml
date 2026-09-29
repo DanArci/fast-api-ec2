@@ -1,0 +1,11 @@
+[project]
+name = "fastapi-app"
+version = "0.1.0"
+description = "FastAPI service connected to a remote PostgreSQL database"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "fastapi[standard]>=0.141.1",
+    "psycopg2-binary>=2.9.13",
+    "sqlmodel>=0.0.46",
+]
